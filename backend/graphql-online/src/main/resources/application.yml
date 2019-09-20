@@ -1,0 +1,21 @@
+server:
+  port: 8000
+spring:
+ data:
+  mongodb:
+   database: graphql
+   host: 127.0.0.1
+   port: 27017
+
+## need to disable spring boot multipart n order for graphql   
+ servlet:
+   multipart:
+     enabled: false
+   
+graphql:
+   servlet:
+      mapping: /graphql
+
+#graphiql:
+   #mapping: /graphiql
+   #endpoint: /service/api/query

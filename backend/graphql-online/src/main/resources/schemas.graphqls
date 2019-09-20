@@ -1,0 +1,34 @@
+scalar Date
+
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+    articles: [Article]
+}
+
+type Mutation{
+	createArticle(article : ArticleInput!): Article
+	updateArticle(article : ArticleInput!): Article
+	deleteArticle(id : ID!): Boolean
+}
+
+type Article {
+   id: String
+   version: String
+   title: String
+   content: String
+   author: String
+   modifiedTime: Date
+}
+
+input ArticleInput {
+   id: String
+   version: String
+   title: String
+   content: String
+   author: String
+   modifiedTime: Date
+}
